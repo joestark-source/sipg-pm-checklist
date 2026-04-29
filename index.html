@@ -3,349 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Self-Managing Owner's Checklist</title>
+<title>The Self-Managing Owner's Checklist — Stark Industries Property Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap');
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    width: 816px;
-    min-height: 1056px;
-    background: #000000;
-    font-family: 'Lato', sans-serif;
-    color: #ffffff;
-    overflow: hidden;
-  }
-
-  .page {
-    width: 816px;
-    min-height: 1056px;
-    background: #000000;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Gold accent bar top */
-  .top-bar {
-    height: 5px;
-    background: #f4c810;
-    width: 100%;
-  }
-
-  /* Header */
-  .header {
-    padding: 36px 52px 28px 52px;
-    border-bottom: 1px solid rgba(244, 200, 16, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .header-left {}
-
-  .eyebrow {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #f4c810;
-    margin-bottom: 8px;
-  }
-
-  .title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1.1;
-    letter-spacing: -0.5px;
-  }
-
-  .subtitle {
-    font-family: 'Lato', sans-serif;
-    font-size: 13.5px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.65);
-    margin-top: 6px;
-    line-height: 1.4;
-    max-width: 420px;
-  }
-
-  .header-right {
-    text-align: right;
-  }
-
-  .brand-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.6;
-  }
-
-  /* Checklist grid */
-  .checklist-section {
-    flex: 1;
-    padding: 24px 52px 20px 52px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-  }
-
-  .item {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(244, 200, 16, 0.12);
-    border-left: 3px solid #f4c810;
-    border-radius: 3px;
-    padding: 12px 14px 12px 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .item-number {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    color: #f4c810;
-    opacity: 0.8;
-    min-width: 18px;
-    padding-top: 1px;
-    letter-spacing: 0.5px;
-  }
-
-  .item-content {}
-
-  .item-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11.5px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 3px;
-    letter-spacing: 0.2px;
-  }
-
-  .item-desc {
-    font-family: 'Lato', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.58);
-    line-height: 1.45;
-  }
-
-  /* CTA Section */
-  .cta-section {
-    margin: 16px 52px 0 52px;
-    background: #f4c810;
-    border-radius: 4px;
-    padding: 20px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .cta-text {}
-
-  .cta-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 900;
-    color: #000000;
-    letter-spacing: -0.3px;
-  }
-
-  .cta-sub {
-    font-family: 'Lato', sans-serif;
-    font-size: 11.5px;
-    color: rgba(0,0,0,0.65);
-    margin-top: 3px;
-  }
-
-  .cta-button {
-    background: #000000;
-    color: #f4c810;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 10.5px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 11px 22px;
-    border-radius: 3px;
-    text-decoration: none;
-    white-space: nowrap;
-    display: inline-block;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 14px 52px 18px 52px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(244, 200, 16, 0.1);
-  }
-
-  .footer-brand {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 8.5px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
-  }
-
-  .footer-tagline {
-    font-family: 'Lato', sans-serif;
-    font-size: 9px;
-    color: rgba(255,255,255,0.2);
-    letter-spacing: 0.5px;
-  }
-
-  .bottom-bar {
-    height: 4px;
-    background: linear-gradient(90deg, #f4c810 0%, rgba(244,200,16,0.3) 100%);
-    width: 100%;
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#f4c810;--gold-dim:rgba(244,200,16,0.15);--gold-border:rgba(244,200,16,0.25);--black:#000000;--surface:#0a0a0a;--surface2:#111111;--surface3:#1a1a1a;--text:#ffffff;--muted:rgba(255,255,255,0.55);--dim:rgba(255,255,255,0.25)}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Lato',sans-serif;line-height:1.6;min-height:100vh;overflow-x:hidden}
+.top-bar{height:4px;background:var(--gold);width:100%}
+nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(244,200,16,0.1);background:var(--surface)}
+.nav-brand{display:flex;align-items:center;gap:12px}
+.nav-hex{width:36px;height:36px;background:var(--gold);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-hex-inner{width:16px;height:16px;background:var(--black);clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%)}
+.nav-text{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.nav-tagline{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:1px}
+.hero{padding:80px 40px 60px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.hero-eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--gold);flex-shrink:0}
+.hero-title{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
+.hero-title span{color:var(--gold)}
+.hero-subtitle{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px}
+.checklist-preview{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:28px}
+.preview-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--muted)}
+.preview-check{width:14px;height:14px;border:1.5px solid var(--gold);border-radius:2px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
+.preview-check::after{content:'';width:6px;height:4px;border-left:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(-45deg) translateY(-1px)}
+.hero-proof{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--dim)}
+.proof-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.form-card{background:var(--surface);border:1px solid var(--gold-border);border-radius:12px;overflow:hidden;position:relative}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.form-header{padding:28px 28px 20px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.form-headline{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;margin-bottom:6px}
+.form-subheadline{font-size:13px;color:var(--muted);line-height:1.5}
+.form-iframe-wrap{width:100%;background:var(--surface)}
+.form-iframe-wrap iframe{width:100%;min-height:500px;border:none;display:block}
+.form-footer-note{padding:12px 28px 18px;font-size:11px;color:var(--dim);border-top:1px solid rgba(255,255,255,0.04)}
+.what-section{background:var(--surface);border-top:1px solid rgba(244,200,16,0.1);border-bottom:1px solid rgba(244,200,16,0.1);padding:64px 40px}
+.what-inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;margin-bottom:8px;letter-spacing:-.01em}
+.section-sub{font-size:14px;color:var(--muted);margin-bottom:36px;max-width:540px}
+.items-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.item-card{background:var(--surface2);border:1px solid rgba(244,200,16,0.1);border-left:3px solid var(--gold);border-radius:4px;padding:14px 16px;transition:background .15s}
+.item-card:hover{background:var(--surface3)}
+.item-num{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.1em;margin-bottom:5px;opacity:.7}
+.item-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;margin-bottom:4px}
+.item-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.about-wrap{max-width:1100px;margin:0 auto;padding:64px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.about-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.01em;margin-bottom:14px;line-height:1.2}
+.about-body{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stat-box{background:var(--surface);border:1px solid var(--gold-border);border-radius:8px;padding:14px}
+.stat-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:26px;color:var(--gold);line-height:1;margin-bottom:4px}
+.stat-label{font-size:11px;color:var(--muted);line-height:1.4}
+.steps-card{background:var(--surface);border:1px solid var(--gold-border);border-radius:12px;padding:28px}
+.steps-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.step{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.step:last-child{margin-bottom:0}
+.step-num{width:28px;height:28px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;color:#000;flex-shrink:0}
+.step-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;margin-bottom:3px}
+.step-desc{font-size:12px;color:var(--muted)}
+.cta-banner{background:var(--gold);padding:48px 40px;text-align:center}
+.cta-banner h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:24px;color:#000;letter-spacing:-.01em;margin-bottom:8px}
+.cta-banner p{font-size:14px;color:rgba(0,0,0,0.65);margin-bottom:22px}
+.cta-btn{display:inline-block;background:#000;color:var(--gold);font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:14px 32px;border-radius:4px;text-decoration:none;transition:transform .15s}
+.cta-btn:hover{transform:translateY(-2px)}
+footer{background:var(--surface);border-top:1px solid rgba(244,200,16,0.1);padding:24px 40px;display:flex;align-items:center;justify-content:space-between}
+.footer-brand{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
+.footer-tag{font-size:11px;color:var(--dim)}
+.bottom-bar{height:3px;background:linear-gradient(90deg,var(--gold) 0%,rgba(244,200,16,.2) 100%)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-left{animation:fadeUp .6s ease forwards}
+.form-card{animation:fadeUp .6s ease .15s both}
+@media(max-width:768px){nav{padding:14px 20px}.hero{grid-template-columns:1fr;gap:36px;padding:40px 20px}.about-wrap{grid-template-columns:1fr;gap:36px;padding:40px 20px}.what-section{padding:40px 20px}.items-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;gap:6px;text-align:center;padding:18px 20px}.cta-banner{padding:36px 20px}}
+@media(max-width:480px){.items-grid{grid-template-columns:1fr}.checklist-preview{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="top-bar"></div>
-
-  <div class="header">
-    <div class="header-left">
-      <div class="eyebrow">Stark Industries Property Group</div>
-      <div class="title">The Self-Managing Owner's<br>Checklist</div>
-      <div class="subtitle">12 Things Professional STR Managers Do That Self-Managers Don't</div>
-    </div>
-    <div class="header-right">
-      <div class="brand-name">STARK INDUSTRIES<br>PROPERTY GROUP</div>
+<div class="top-bar"></div>
+<nav>
+  <div class="nav-brand">
+    <div class="nav-hex"><div class="nav-hex-inner"></div></div>
+    <div>
+      <div class="nav-text">Stark Industries Property Group</div>
+      <div class="nav-tagline">Maximized Revenue. Hassle-Free Hosting. Unmatched Hospitality.</div>
     </div>
   </div>
+</nav>
 
-  <div class="checklist-section">
-    <div class="grid">
-
-      <div class="item">
-        <div class="item-number">01</div>
-        <div class="item-content">
-          <div class="item-title">Dynamic Pricing — Updated Daily</div>
-          <div class="item-desc">Rates shift every morning based on demand, local events, and comp movement — not whenever you remember to log in.</div>
-        </div>
+<section style="background:var(--black)">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Free Resource — Property Management</div>
+      <h1 class="hero-title">The Self-Managing<br>Owner's <span>Checklist</span></h1>
+      <p class="hero-subtitle">12 things professional STR managers do that most self-managers don't. Go through it honestly — most owners find 3–5 gaps on the first read.</p>
+      <div class="checklist-preview">
+        <div class="preview-item"><div class="preview-check"></div>Dynamic Pricing Daily</div>
+        <div class="preview-item"><div class="preview-check"></div>Professional Photography</div>
+        <div class="preview-item"><div class="preview-check"></div>Guest Screening</div>
+        <div class="preview-item"><div class="preview-check"></div>Automated Messaging</div>
+        <div class="preview-item"><div class="preview-check"></div>Preventive Maintenance</div>
+        <div class="preview-item"><div class="preview-check"></div>Revenue Gap Analysis</div>
+        <div class="preview-item"><div class="preview-check"></div>Review Response Strategy</div>
+        <div class="preview-item"><div class="preview-check"></div>Performance Benchmarking</div>
       </div>
-
-      <div class="item">
-        <div class="item-number">02</div>
-        <div class="item-content">
-          <div class="item-title">Professional Photography</div>
-          <div class="item-desc">Shots that stop the scroll and convert browsers to bookers — not iPhone photos in bad lighting.</div>
+      <div class="hero-proof"><div class="proof-dot"></div>Written by an active STR operator — not a consultant reading data from a desk.</div>
+    </div>
+    <div>
+      <div class="form-card">
+        <div class="form-header">
+          <div class="form-headline">Get the Free Checklist</div>
+          <div class="form-subheadline">See exactly what professional STR managers do that most self-managers don't.</div>
         </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">03</div>
-        <div class="item-content">
-          <div class="item-title">Guest Screening</div>
-          <div class="item-desc">Every booking vetted before it's confirmed. Protecting the asset starts before check-in, not after.</div>
+        <div class="form-iframe-wrap">
+          <iframe src="https://api.leadconnectorhq.com/widget/form/9Se3LfAuZIsHr55h6pj4" id="inline-9Se3LfAuZIsHr55h6pj4" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-activation-type="alwaysActivated" data-deactivation-type="neverDeactivate" data-form-name="PM Checklist Download" data-height="500" data-layout-iframe-id="inline-9Se3LfAuZIsHr55h6pj4" title="PM Checklist Download"></iframe>
+          <script src="https://link.msgsndr.com/js/form_embed.js"></script>
         </div>
+        <div class="form-footer-note">Your information is private and will never be shared or sold.</div>
       </div>
-
-      <div class="item">
-        <div class="item-number">04</div>
-        <div class="item-content">
-          <div class="item-title">Automated Messaging Sequences</div>
-          <div class="item-desc">Every touchpoint — confirmation, check-in, mid-stay, checkout, review — sent automatically without lifting a finger.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">05</div>
-        <div class="item-content">
-          <div class="item-title">Preventive Maintenance Schedule</div>
-          <div class="item-desc">Catching the leaky faucet, worn battery, and fraying cord before a guest does — and leaves it in a review.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">06</div>
-        <div class="item-content">
-          <div class="item-title">Vendor Relationships</div>
-          <div class="item-desc">Trusted cleaners, handymen, and suppliers who show up, do the work, and don't need babysitting.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">07</div>
-        <div class="item-content">
-          <div class="item-title">Revenue Gap Analysis</div>
-          <div class="item-desc">Knowing exactly what the property should earn vs. what it's actually earning — and closing that gap.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">08</div>
-        <div class="item-content">
-          <div class="item-title">Review Response Strategy</div>
-          <div class="item-desc">Every review answered within 24 hours. Every signal — positive or negative — tracked and acted on.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">09</div>
-        <div class="item-content">
-          <div class="item-title">Direct Booking Optimization</div>
-          <div class="item-desc">Building a channel that doesn't pay 15% to OTAs every time. More revenue stays where it belongs.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">10</div>
-        <div class="item-content">
-          <div class="item-title">Supply Chain Management</div>
-          <div class="item-desc">Never running out of the toiletries, linens, and restockables that separate 5-star stays from 3-star complaints.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">11</div>
-        <div class="item-content">
-          <div class="item-title">Performance Benchmarking</div>
-          <div class="item-desc">Measuring against the comp set — not last month — so you always know if the property is winning or leaving money out.</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-number">12</div>
-        <div class="item-content">
-          <div class="item-title">Tax &amp; Expense Optimization</div>
-          <div class="item-desc">Running the property like a business — not a hobby. Every deductible dollar captured, every expense categorized.</div>
-        </div>
-      </div>
-
     </div>
   </div>
+</section>
 
-  <div class="cta-section">
-    <div class="cta-text">
-      <div class="cta-heading">Ready to hand this off?</div>
-      <div class="cta-sub">Book a free property consultation and see what your property should actually be earning.</div>
+<div class="what-section">
+  <div class="what-inner">
+    <div class="section-eyebrow">What's Inside</div>
+    <div class="section-title">All 12 Items — At a Glance</div>
+    <p class="section-sub">Each item is written from real operator experience. These are the systems that separate properties that perform from properties that plateau.</p>
+    <div class="items-grid">
+      <div class="item-card"><div class="item-num">01</div><div class="item-name">Dynamic Pricing — Updated Daily</div><div class="item-desc">Rates shift every morning based on demand, local events, and comp movement.</div></div>
+      <div class="item-card"><div class="item-num">02</div><div class="item-name">Professional Photography</div><div class="item-desc">Shots that stop the scroll and convert browsers to bookers.</div></div>
+      <div class="item-card"><div class="item-num">03</div><div class="item-name">Guest Screening</div><div class="item-desc">Every booking vetted before it's confirmed. Protecting the asset starts before check-in.</div></div>
+      <div class="item-card"><div class="item-num">04</div><div class="item-name">Automated Messaging Sequences</div><div class="item-desc">Every guest touchpoint handled automatically without lifting a finger.</div></div>
+      <div class="item-card"><div class="item-num">05</div><div class="item-name">Preventive Maintenance Schedule</div><div class="item-desc">Catching problems before a guest does — and leaves it in a review.</div></div>
+      <div class="item-card"><div class="item-num">06</div><div class="item-name">Vendor Relationships</div><div class="item-desc">Trusted cleaners, handymen, and suppliers who show up and don't need babysitting.</div></div>
+      <div class="item-card"><div class="item-num">07</div><div class="item-name">Revenue Gap Analysis</div><div class="item-desc">Knowing exactly what the property should earn vs. what it's actually earning.</div></div>
+      <div class="item-card"><div class="item-num">08</div><div class="item-name">Review Response Strategy</div><div class="item-desc">Every review answered within 24 hours. Every signal tracked and acted on.</div></div>
+      <div class="item-card"><div class="item-num">09</div><div class="item-name">Direct Booking Optimization</div><div class="item-desc">Reducing OTA dependency and keeping more revenue in the business.</div></div>
+      <div class="item-card"><div class="item-num">10</div><div class="item-name">Supply Chain Management</div><div class="item-desc">Never running out of the restockables that drive 5-star stays.</div></div>
+      <div class="item-card"><div class="item-num">11</div><div class="item-name">Performance Benchmarking</div><div class="item-desc">Measuring against the comp set — so you always know if the property is winning.</div></div>
+      <div class="item-card"><div class="item-num">12</div><div class="item-name">Tax &amp; Expense Optimization</div><div class="item-desc">Running the property like a business. Every deductible dollar captured.</div></div>
     </div>
-    <a class="cta-button" href="https://api.leadconnectorhq.com/widget/bookings/joe-stark-consultation">Book a Free Consultation →</a>
   </div>
-
-  <div class="footer">
-    <div class="footer-brand">Stark Industries Property Group L.L.C.</div>
-    <div class="footer-tagline">Maximized Revenue. Hassle-Free Hosting. Unmatched Hospitality.</div>
-  </div>
-  <div class="bottom-bar"></div>
 </div>
+
+<div style="background:var(--black)">
+  <div class="about-wrap">
+    <div>
+      <div class="about-label">About Joe Stark</div>
+      <div class="about-title">Operator-Built. Not Consultant-Written.</div>
+      <p class="about-body">I'm Joe Stark, founder of Stark Industries Property Group. We manage short-term rentals for owners who want maximized revenue without the day-to-day headache.</p>
+      <p class="about-body">This checklist is what our management framework is built on. Every item came from real experience — not reading reports from a desk. Go through it honestly and flag every item that isn't fully in place at your property right now.</p>
+      <div class="stats">
+        <div class="stat-box"><div class="stat-num">7+</div><div class="stat-label">Properties under active management</div></div>
+        <div class="stat-box"><div class="stat-num">5★</div><div class="stat-label">Consistent review standard across the portfolio</div></div>
+      </div>
+    </div>
+    <div class="steps-card">
+      <div class="steps-label">What Happens Next</div>
+      <div class="step"><div class="step-num">1</div><div><div class="step-title">Get the checklist instantly</div><div class="step-desc">It lands in your inbox within minutes of submitting.</div></div></div>
+      <div class="step"><div class="step-num">2</div><div><div class="step-title">Go through it honestly</div><div class="step-desc">Flag every item that isn't fully in place at your property right now.</div></div></div>
+      <div class="step"><div class="step-num">3</div><div><div class="step-title">See what your property should be earning</div><div class="step-desc">Book a free consultation and we'll show you exactly where the revenue is.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <h2>Ready to hand this off?</h2>
+  <p>Book a free property consultation and see what your property should actually be earning.</p>
+  <a class="cta-btn" href="https://api.leadconnectorhq.com/widget/bookings/joe-stark-consultation">Book a Free Consultation →</a>
+</div>
+
+<footer>
+  <div class="footer-brand">Stark Industries Property Group L.L.C.</div>
+  <div class="footer-tag">Maximized Revenue. Hassle-Free Hosting. Unmatched Hospitality.</div>
+</footer>
+<div class="bottom-bar"></div>
 </body>
 </html>
