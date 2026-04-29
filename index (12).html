@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Self-Managing Owner's Checklist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 816px;
+    min-height: 1056px;
+    background: #000000;
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .page {
+    width: 816px;
+    min-height: 1056px;
+    background: #000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Gold accent bar top */
+  .top-bar {
+    height: 5px;
+    background: #f4c810;
+    width: 100%;
+  }
+
+  /* Header */
+  .header {
+    padding: 36px 52px 28px 52px;
+    border-bottom: 1px solid rgba(244, 200, 16, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header-left {}
+
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f4c810;
+    margin-bottom: 8px;
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-top: 6px;
+    line-height: 1.4;
+    max-width: 420px;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+  }
+
+  /* Checklist grid */
+  .checklist-section {
+    flex: 1;
+    padding: 24px 52px 20px 52px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .item {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(244, 200, 16, 0.12);
+    border-left: 3px solid #f4c810;
+    border-radius: 3px;
+    padding: 12px 14px 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .item-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    color: #f4c810;
+    opacity: 0.8;
+    min-width: 18px;
+    padding-top: 1px;
+    letter-spacing: 0.5px;
+  }
+
+  .item-content {}
+
+  .item-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 3px;
+    letter-spacing: 0.2px;
+  }
+
+  .item-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.58);
+    line-height: 1.45;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    margin: 16px 52px 0 52px;
+    background: #f4c810;
+    border-radius: 4px;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cta-text {}
+
+  .cta-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: -0.3px;
+  }
+
+  .cta-sub {
+    font-family: 'Lato', sans-serif;
+    font-size: 11.5px;
+    color: rgba(0,0,0,0.65);
+    margin-top: 3px;
+  }
+
+  .cta-button {
+    background: #000000;
+    color: #f4c810;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 11px 22px;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 14px 52px 18px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(244, 200, 16, 0.1);
+  }
+
+  .footer-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-tagline {
+    font-family: 'Lato', sans-serif;
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.5px;
+  }
+
+  .bottom-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #f4c810 0%, rgba(244,200,16,0.3) 100%);
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top-bar"></div>
+
+  <div class="header">
+    <div class="header-left">
+      <div class="eyebrow">Stark Industries Property Group</div>
+      <div class="title">The Self-Managing Owner's<br>Checklist</div>
+      <div class="subtitle">12 Things Professional STR Managers Do That Self-Managers Don't</div>
+    </div>
+    <div class="header-right">
+      <div class="brand-name">STARK INDUSTRIES<br>PROPERTY GROUP</div>
+    </div>
+  </div>
+
+  <div class="checklist-section">
+    <div class="grid">
+
+      <div class="item">
+        <div class="item-number">01</div>
+        <div class="item-content">
+          <div class="item-title">Dynamic Pricing — Updated Daily</div>
+          <div class="item-desc">Rates shift every morning based on demand, local events, and comp movement — not whenever you remember to log in.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">02</div>
+        <div class="item-content">
+          <div class="item-title">Professional Photography</div>
+          <div class="item-desc">Shots that stop the scroll and convert browsers to bookers — not iPhone photos in bad lighting.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">03</div>
+        <div class="item-content">
+          <div class="item-title">Guest Screening</div>
+          <div class="item-desc">Every booking vetted before it's confirmed. Protecting the asset starts before check-in, not after.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">04</div>
+        <div class="item-content">
+          <div class="item-title">Automated Messaging Sequences</div>
+          <div class="item-desc">Every touchpoint — confirmation, check-in, mid-stay, checkout, review — sent automatically without lifting a finger.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">05</div>
+        <div class="item-content">
+          <div class="item-title">Preventive Maintenance Schedule</div>
+          <div class="item-desc">Catching the leaky faucet, worn battery, and fraying cord before a guest does — and leaves it in a review.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">06</div>
+        <div class="item-content">
+          <div class="item-title">Vendor Relationships</div>
+          <div class="item-desc">Trusted cleaners, handymen, and suppliers who show up, do the work, and don't need babysitting.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">07</div>
+        <div class="item-content">
+          <div class="item-title">Revenue Gap Analysis</div>
+          <div class="item-desc">Knowing exactly what the property should earn vs. what it's actually earning — and closing that gap.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">08</div>
+        <div class="item-content">
+          <div class="item-title">Review Response Strategy</div>
+          <div class="item-desc">Every review answered within 24 hours. Every signal — positive or negative — tracked and acted on.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">09</div>
+        <div class="item-content">
+          <div class="item-title">Direct Booking Optimization</div>
+          <div class="item-desc">Building a channel that doesn't pay 15% to OTAs every time. More revenue stays where it belongs.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">10</div>
+        <div class="item-content">
+          <div class="item-title">Supply Chain Management</div>
+          <div class="item-desc">Never running out of the toiletries, linens, and restockables that separate 5-star stays from 3-star complaints.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">11</div>
+        <div class="item-content">
+          <div class="item-title">Performance Benchmarking</div>
+          <div class="item-desc">Measuring against the comp set — not last month — so you always know if the property is winning or leaving money out.</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-number">12</div>
+        <div class="item-content">
+          <div class="item-title">Tax &amp; Expense Optimization</div>
+          <div class="item-desc">Running the property like a business — not a hobby. Every deductible dollar captured, every expense categorized.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <div class="cta-text">
+      <div class="cta-heading">Ready to hand this off?</div>
+      <div class="cta-sub">Book a free property consultation and see what your property should actually be earning.</div>
+    </div>
+    <a class="cta-button" href="https://api.leadconnectorhq.com/widget/bookings/joe-stark-consultation">Book a Free Consultation →</a>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Stark Industries Property Group L.L.C.</div>
+    <div class="footer-tagline">Maximized Revenue. Hassle-Free Hosting. Unmatched Hospitality.</div>
+  </div>
+  <div class="bottom-bar"></div>
+</div>
+</body>
+</html>
